@@ -106,7 +106,7 @@ def get_local_ip():
     return IP
 
 def run_flask():
-    flask_app.run(host='0.0.0.0', port=5000)
+    flask_app.run(host='0.0.0.0', port=80)
 
 class WebShareApp(QWidget):
     def __init__(self):
@@ -161,7 +161,7 @@ class WebShareApp(QWidget):
 
     def start_server(self):
         local_ip = get_local_ip()
-        url = f'http://{local_ip}:5000'
+        url = f'http://{local_ip}:80'
         self.generate_qr(url)
 
         # Run Flask server in a separate thread
